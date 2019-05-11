@@ -8,7 +8,7 @@
         <ul>
             {{#each elements}}
             {{#unless blown_up}}
-            {{> elements/element-block blown_up=false}}
+            {{> elements/element-block blow_up=false}}
             {{/unless}}
             {{/each}}
         </ul>
@@ -20,7 +20,7 @@
         <ul>
             {{#each elements}}
             {{#if blown_up}}
-            {{> elements/element-block blown_up=true}}
+            {{> elements/element-block blow_up=true}}
             {{/if}}
             {{/each}}
         </ul>

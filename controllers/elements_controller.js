@@ -16,6 +16,8 @@ router.put("/api/elements/:id", function(req, res) {
     var condition = "id = " + req.params.id;
   
     console.log("condition", condition);
+    console.log(`blown up: ${blown_up}`)
+    console.log(req.body);
   
     element.updateOne({
       blown_up: req.body.blown_up
