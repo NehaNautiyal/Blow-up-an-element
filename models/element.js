@@ -2,9 +2,14 @@
 var orm = require("../config/orm.js");
 
 var element = {
-    all: function(cb) {
-        orm.selectAll("elements", function(res) {
-            cb(res);
+    selectAll: function(cb) {
+        orm.all("elements", function(result) {
+            cb(result);
+        });
+    },
+    updateOne: function(cb) {
+        orm.update("elements", objColVals, condition, function(result) {
+            cb(result);
         });
     }
 }
