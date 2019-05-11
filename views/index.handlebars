@@ -1,44 +1,58 @@
-<h1>Elements</h1>
+<h1 class="text-center">Elements</h1>
+<img class="img-element" src="/assets/img/element.gif" alt="Element on Periodic table">
 
 <div class="row">
 
-    <div class="col-md-6">
-        <h2>Blow these up!</h2>
+    <div class="col-md-6 justify-right text-right">
+        <h2 class="font-weight-bold">Blow these up!</h2>
 
         <ul>
             {{#each elements}}
             {{#unless blown_up}}
-            {{> elements/element-block blow_up=false}}
+            {{!-- {{> elements/element-block blown_up=false}} --}}
+            <li>
+                {{name}}
+
+                <button class="change-blown-up" data-id="{{id}}" data-blownstate="{{blown_up}}">
+                    {{#unless blown_up}}Blow Me Up!{{/unless}}
+                </button>
+            </li>
             {{/unless}}
             {{/each}}
         </ul>
     </div>
     <div class="col-md-6">
 
-        <h2>Already blown up!</h2>
+        <h2 class="font-weight-bold">Already blown up!</h2>
 
         <ul>
             {{#each elements}}
             {{#if blown_up}}
-            {{> elements/element-block blow_up=true}}
+            <li>
+                {{name}}
+            </li>
+            {{!-- {{> elements/element-block blown_up=true}} --}}
             {{/if}}
             {{/each}}
         </ul>
     </div>
 </div>
-<div class="row">
-
+<div class="row text-center">
     <h2>Add an Element</h2>
 </div>
 <div class="row">
-    <form class="create-form">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        <form class="create-form text-center">
 
-        <div class="form-group">
-            <label for="ca">Element Name:</label>
-            <input type="text" id="ca" name="name">
-        </div>
+            <div class="form-group">
+                <label for="ca">Element Name:</label>
+                <input type="text" id="ca" name="name">
+            </div>
 
-        <button type="submit">Add Element</button>
-    </form>
+            <button type="submit">Add Element</button>
+        </form>
+    </div>
+    <div class="col-md-4"></div>
 </div>
 </div>

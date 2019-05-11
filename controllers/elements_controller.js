@@ -15,10 +15,6 @@ router.get("/", function(req, res) {
 router.put("/api/elements/:id", function(req, res) {
     var condition = "id = " + req.params.id;
   
-    console.log("condition", condition);
-    console.log(`blown up: ${blown_up}`)
-    console.log(req.body);
-  
     element.updateOne({
       blown_up: req.body.blown_up
     }, condition, function(result) {
@@ -30,5 +26,15 @@ router.put("/api/elements/:id", function(req, res) {
       }
     });
   });
+
+router.post("/api/elements", function(req, res) {
+    console.log(req.body);
+    console.log("req.body");
+    element.insertOne("name", req.body.name, function(result) {
+        // Send back the ID of the new quote
+        res.json({ id: result.insertId });
+      });
+    });
+
 
 module.exports = router;

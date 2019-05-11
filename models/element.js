@@ -7,11 +7,16 @@ var element = {
             cb(result);
         });
     },
-    updateOne: function(cb) {
+    updateOne: function(objColVals, condition, cb) {
         orm.update("elements", objColVals, condition, function(result) {
             cb(result);
         });
-    }
+    },
+    insertOne: function(cols, vals, cb) {
+        orm.create("elements", cols, vals, function(res) {
+          cb(res);
+        });
+      }
 }
 
 module.exports = element;

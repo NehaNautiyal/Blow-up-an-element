@@ -1,10 +1,10 @@
 $(function() {
     $(".change-blown-up").on("click", function(event) {
       var id = $(this).data("id");
-      var blow_up = $(this).data("blownState");
+      var blow_up = $(this).data("blownstate");
   
       var newBlownState = {
-        blown_up: blow_up
+        blown_up: !blow_up
       };
   
       // Send the PUT request.
@@ -13,7 +13,7 @@ $(function() {
         data: newBlownState
       }).then(
         function() {
-          console.log("changed blown state to", blow_up);
+        //   console.log("changed blown state to", blown_up);
           // Reload the page to get the updated list
           location.reload();
         }
@@ -24,18 +24,19 @@ $(function() {
       // Make sure to preventDefault on a submit event.
       event.preventDefault();
   
-      var newCat = {
+      var newElement = {
         name: $("#ca").val().trim(),
-        sleepy: $("[name=sleepy]:checked").val().trim()
+        blown_up: false
       };
+      console.log(newElement);
   
       // Send the POST request.
-      $.ajax("/api/cats", {
+      $.ajax("/api/elements", {
         type: "POST",
-        data: newCat
+        data: newElement
       }).then(
         function() {
-          console.log("created new cat");
+          console.log("created new element");
           // Reload the page to get the updated list
           location.reload();
         }
