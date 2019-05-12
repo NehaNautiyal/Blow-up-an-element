@@ -21,6 +21,10 @@ $(function() {
     });
   
     $(".create-form").on("submit", function(event) {
+        if ($("ca").val() === "") {
+            alert("Please enter an element name.");
+            return;
+        }
       // Make sure to preventDefault on a submit event.
       event.preventDefault();
   

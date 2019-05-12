@@ -4,13 +4,22 @@ body {
     background-size: cover;
 }
 
-h1, h2, h3, label, ul {
-    font-family: 'Permanent Marker', cursive;
-    color: white;  
+h1, h2, h3, label {
+    font-family: 'Sigmar One', cursive;
+    color: blue;  
 }
 
-h1 {
+/* h1 {
 text-align: center;
+} */
+
+ol {
+    list-style-position: inside;
+}
+
+ul, ol {
+    font-family: 'Julius Sans One', sans-serif;
+    color: white; 
 }
 
 button {
