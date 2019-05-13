@@ -8,5 +8,6 @@ create table elements
 	id int NOT NULL AUTO_INCREMENT,
 	name varchar(255) NOT NULL,
 	blown_up BOOLEAN DEFAULT false,
+	createdAT TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	PRIMARY KEY (id)
 );
