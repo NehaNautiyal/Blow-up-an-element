@@ -1,0 +1,34 @@
+{
+  "name": "blow-up-an-element",
+  "version": "1.0.0",
+  "description": "Blow up elements on the periodic table with a click of a button",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.2",
+    "mysql": "^2.17.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NehaNautiyal/Blow-up-an-element.git"
+  },
+  "keywords": [
+    "element",
+    "periodic",
+    "table",
+    "mysql",
+    "orm",
+    "express"
+  ],
+  "author": "Neha Nautiyal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NehaNautiyal/Blow-up-an-element/issues"
+  },
+  "homepage": "https://github.com/NehaNautiyal/Blow-up-an-element#readme"
+}
