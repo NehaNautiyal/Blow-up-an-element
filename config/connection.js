@@ -1,12 +1,17 @@
 var mysql = require("mysql");
 
-var connection = mysql.createConnection({
-    host: "us-cdbr-iron-east-02.cleardb.net",
-    user: "b096084e4163e6",
-    password: "2c9e4d97",
-    database: "heroku_e963bb9616bddd6"
-  });
+var connection;
 
+if (process.env.JAWSDB_URL) {
+  connection = mysql.createConnection(process.env.JAWSDB_URL);
+} else {
+  connection = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    password: "",
+    database: "elements_db"
+  });
+}
   
 
 connection.connect(function (err) {
