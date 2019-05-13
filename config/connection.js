@@ -1,18 +1,13 @@
 var mysql = require("mysql");
 
-var connection;
-
-if (process.env.CLEARDB_URL) {
-  connection = mysql.createConnection(process.env.CLEARDB_URL);
-} else {
-  connection = mysql.createConnection({
-    host: "localhost",
-    port: 3306,
-    user: "root",
-    password: "",
-    database: "element_db"
+var connection = mysql.createConnection({
+    host: "us-cdbr-iron-east-02.cleardb.net",
+    user: "b096084e4163e6",
+    password: "2c9e4d97",
+    database: "heroku_e963bb9616bddd6"
   });
-}
+
+  
 
 connection.connect(function (err) {
   if (err) {
